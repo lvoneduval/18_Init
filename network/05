@@ -1,0 +1,2 @@
+# dig +short slash16.org
+dig | grep 'SERVER'| awk '{print $3}' | awk -F '#' '{print $1}'

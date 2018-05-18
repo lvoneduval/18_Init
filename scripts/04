@@ -1,0 +1,10 @@
+
+s2='cat /root/crontab.cnf'
+s1='md5sum /etc/crontab | cut -d " " -f1'
+
+if [ "$s1" != "$s2" ]
+then
+	md5sum /etc/crontab | cut -d " " -f 1 > /root/crontabsum
+	echo "il y a eu modification"
+fi
+# 0 0    0 * 0-6   root    ./04
